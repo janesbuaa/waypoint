@@ -99,9 +99,9 @@ def way_point():
 
 
 def main():
-    if isinstance(ori_pos, Position):
-        way_point()
+	if isinstance(ori_pos, Position):
+		way_point()
 
 
 if __name__ == "__main__":
-    main()
+	main()

@@ -84,20 +84,20 @@ def way_point(p):
 
 
 def main():
-    if isinstance(ori_pos, Position):
-        origin_p = (ori_pos.latitude, ori_pos.longitude, ori_pos.altitude)
-        points = []
-        next_p = (origin_p[0], origin_p[1], origin_p[2]+8)
-        points.append(next_p)
-        next_p = (origin_p[0]+0.00030, origin_p[1], origin_p[2]+8)
-        points.append(next_p)
-        next_p = (origin_p[0]+0.00030, origin_p[1]+0.00020, origin_p[2]+8)
-        points.append(next_p)
-        next_p = (origin_p[0], origin_p[1]+0.00020, origin_p[2]+8)
-        points.append(next_p)
-        print "总共有{}个点，各点的坐标为\n{}".format(len(points), points)
-        way_point(points)
+	if isinstance(ori_pos, Position):
+		origin_p = (ori_pos.latitude, ori_pos.longitude, ori_pos.altitude)
+		points = []
+		next_p = (origin_p[0], origin_p[1], origin_p[2]+8)
+		points.append(next_p)
+		next_p = (origin_p[0]+0.00030, origin_p[1], origin_p[2]+8)
+		points.append(next_p)
+		next_p = (origin_p[0]+0.00030, origin_p[1]+0.00020, origin_p[2]+8)
+		points.append(next_p)
+		next_p = (origin_p[0], origin_p[1]+0.00020, origin_p[2]+8)
+		points.append(next_p)
+		print "总共有{}个点，各点的坐标为\n{}".format(len(points), points)
+		way_point(points)
 
 
 if __name__ == "__main__":
-    main()
+	main()

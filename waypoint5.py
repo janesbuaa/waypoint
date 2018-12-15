@@ -74,12 +74,12 @@ def way_point(p):
 		if i == len(p) - 1:
 			itype = 2  # 返航点
 			flag = True
-        if i == 3:
-            heading_angle = 90
-        if i == 5:
-            heading_angle = 180
-        if i == 7:
-            heading_angle = 90
+		if i == 3:
+			heading_angle = 90
+		if i == 5:
+			heading_angle = 180
+		if i == 7:
+			heading_angle = 90
 		wp = wpp(p[i][0], p[i][1], p[i][2], heading=heading_angle, itype=itype, return_flag=flag)
 		wps.append(wp)
 
@@ -98,26 +98,26 @@ def way_point(p):
 
 
 def main():
-    if isinstance(ori_pos, Position):
-        # 起飞时的坐标
-        origin_p = (ori_pos.latitude, ori_pos.longitude, ori_pos.altitude)
-        height = origin_p[2]+8
-        points = []
-        for i in range(3):
-            next_p = (origin_p[0], origin_p[1] + 0.00020 * i, height)  # 逆时针飞行，往东飞20米
-            points.append(next_p)
-        for i in range(1, 3):
-            next_p = (origin_p[0] + 0.00015 * i, origin_p[1] + 0.00020 * 2, height)
-            points.append(next_p)
-        for i in range(1, 3):
-            next_p = (origin_p[0] + 0.00015 * 2, origin_p[1] + 0.00020 * (2 - i), height)
-            points.append(next_p)
-        for i in range(1, 3):
-            next_p = (origin_p[0] + 0.00015 * (2 - i), origin_p[1], height)
-            points.append(next_p)
-        print "总共有{}个点，各点的坐标为\n{}".format(len(points), points)
-        way_point(points)
+	if isinstance(ori_pos, Position):
+		# 起飞时的坐标
+		origin_p = (ori_pos.latitude, ori_pos.longitude, ori_pos.altitude)
+		height = origin_p[2]+8
+		points = []
+		for i in range(3):
+			next_p = (origin_p[0], origin_p[1] + 0.00020 * i, height)  # 逆时针飞行，往东飞20米
+			points.append(next_p)
+		for i in range(1, 3):
+			next_p = (origin_p[0] + 0.00015 * i, origin_p[1] + 0.00020 * 2, height)
+			points.append(next_p)
+		for i in range(1, 3):
+			next_p = (origin_p[0] + 0.00015 * 2, origin_p[1] + 0.00020 * (2 - i), height)
+			points.append(next_p)
+		for i in range(1, 3):
+			next_p = (origin_p[0] + 0.00015 * (2 - i), origin_p[1], height)
+			points.append(next_p)
+		print "总共有{}个点，各点的坐标为\n{}".format(len(points), points)
+		way_point(points)
 
 
 if __name__ == "__main__":
-    main()
+	main()
